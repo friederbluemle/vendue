@@ -1,0 +1,2 @@
+# vendue
+### a Sails application
