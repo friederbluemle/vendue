@@ -28,13 +28,30 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/linker/styles/bootstrap.css">
+    <link rel="stylesheet" href="/linker/styles/custom.css">
     <!--STYLES END-->
   </head>
 
   <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">Vendue</a>
+      </div>
+    </div>
+
     <%- body %>
 
-
+    <div class="container">
+      <hr>
+      <footer class="footer pull-right">
+        <div>
+          <p><a href="http://sailsjs.com/">Powered by Sails.js</a></p>
+          <div><a href="/sails-help">help</a></div>
+        </div>
+      </footer>
+    </div>
 
     <!--
         Client-side Templates
@@ -58,6 +75,7 @@
     -->
 
     <!--TEMPLATES-->
+    
     <!--TEMPLATES END-->
 
 
@@ -84,6 +102,10 @@
     -->
 
     <!--SCRIPTS-->
+    <script src="/linker/js/socket.io.js"></script>
+    <script src="/linker/js/sails.io.js"></script>
+    <script src="/linker/js/app.js"></script>
+    <script src="/linker/js/bootstrap.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>
