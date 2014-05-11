@@ -24,7 +24,11 @@ module.exports = {
    * Overrides for the settings in `config/controllers.js`
    * (specific to UserController)
    */
-  _config: {}
+  _config: {},
+
+  'new': function(req, res) {
+  	res.view();
+  }
 
   
 };
