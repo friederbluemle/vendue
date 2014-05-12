@@ -62,6 +62,28 @@ module.exports = {
         users: users
       });
     });
+  },
+
+  // render the edit view (e.g. /views/edit.ejs)
+  edit: function(req, res, next) {
+    // Find the user from the id passed in via params
+    User.findOne(req.param('id'), function foundUser(err, user) {
+      if (err) return next(err);
+      if (!user) return next('User doesn\'t exist.');
+      res.view({
+        user: user
+      });
+    });
+  },
+
+  // process the info from edit view
+  update: function(req, res, next) {
+    User.update(req.param('id'), req.params.all(), function userUpdated(err) {
+      if (err) {
+        return res.redirect('/user/edit/' + req.param('id'));
+      }
+      res.redirect('/user/show/' + req.param('id'));
+    });
   }
 
 };
