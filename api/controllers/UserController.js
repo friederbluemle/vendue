@@ -51,6 +51,17 @@ module.exports = {
         user: user
       });
     });
+  },
+
+  index: function(req, res, next) {
+    // Get an array of all users in the User collection(e.g. table)
+    User.find(function foundUsers(err, users) {
+      if (err) return next(err);
+      // pass the array down to the /views/index.ejs page
+      res.view({
+        users: users
+      });
+    });
   }
 
 };
