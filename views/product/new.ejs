@@ -1,0 +1,27 @@
+<form action="/product/create" method="POST" id="sign-up-form" class="form-signin">
+	<h2 class="form-signin-heading">Create a product</h2>
+
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="title" name="title">
+	</div>
+
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="description" name="description">
+	</div>
+
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="category" name="category">
+	</div>
+
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="photoUri" name="photoUri">
+	</div>
+
+	<div class="control-group">
+	<input type="text" class="form-control" placeholder="itemUri" name="itemUri">
+	<br />
+	</div>
+
+	<input type="submit" class="btn btn-lg btn-primary btn-block" value="Create Product"/>
+	<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+</form>

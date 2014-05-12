@@ -1,0 +1,35 @@
+<div class="container">
+	<h3>Product Administration</h3>
+	<table class='table'>
+		<tr>
+			<th>ID</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Category</th>
+			<th>PhotoUri</th>
+			<th>ItemUri</th>
+			<th></th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<% _.each(products, function(product) { %>
+		<tr data-id="<%= product.id %>" data-model="product">
+			<td><%= product.id %></td>
+			<td><%= product.title %></td>
+			<td><%= product.description %></td>
+			<td><%= product.category %></td>
+			<td><%= product.photoUri %></td>
+			<td><%= product.itemUri %></td>
+			<td><a href="/product/show/<%= product.id %>" class="btn btn-sm btn-primary">Show</a></td>
+			<td><a href="/product/edit/<%= product.id %>" class="btn btn-sm btn-warning">Edit</a></td>
+			<td><form action="/product/destroy/<%= product.id %>" method="POST">
+				<input type="hidden" name="_method" value="delete"/>
+				<input type="submit" class="btn btn-sm btn-danger" value="Delete"/>
+				<input type="hidden" name="_csrf" value="<%= _csrf %>" />
+			</form></td>
+		</tr>
+
+		<% }) %>
+	</table>
+</div>

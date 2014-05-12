@@ -1,0 +1,13 @@
+<div class='container'>
+	<h1><%= product.title %></h1>
+	<h3><%= product.description %></h3>
+	<h3><%= product.category %></h3>
+	<hr>
+	<p><%= product.photoUri %></p>
+	<p><%= product.itemUri %></p>
+	<hr>
+	<p>viewCount: <%= product.viewCount %></p>
+	<p>likeCount: <%= product.likeCount %></p>
+
+	<a class="btn btn-medium btn-primary" href="/product/edit/<%= product.id %>">Edit</a>
+</div>
